@@ -77,14 +77,14 @@ int main() {
 		s[i][1]=0;
 		s[i][0]=0;
 	}
-	printf("\nEnter MENS pref list, in order of 1 - %d (lower is better) : ",n);
+	printf("\nEnter MENS pref list, in order of 1 - %d (ex : man 1 pref woman 2,4,5,1,3 in that order, man 2... etc) : ",n);
 	for(i=0;i<n;i++) {
 		printf("\nEnter for man number %d : ",i+1);
 		for(j=0;j<n;j++) {
 			scanf("%d",&m[i][j]);
 		}
 	}
-	printf("\nEnter WOMENS pref list, in order of 1 - %d (lower is better) : ",n);
+	printf("\nEnter WOMENS pref list, in order of 1 - %d  : ",n);
         for(i=0;i<n;i++) {
                 printf("\nEnter for woman number %d : ",i+1);
                 for(j=0;j<n;j++) {
