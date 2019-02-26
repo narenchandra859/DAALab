@@ -55,7 +55,7 @@ void propose(int n, listptr front, int getIndexVal, int m[n][n], int f[n][n]) {
 		else {
 			printf("\nChecking m vs m', womMi -> %d",w->womMi);
 			int ti1=w->womMi;
-			printf("\nDeclared ti1 = %d",ti1);			//m'
+			//printf("\nDeclared ti1 = %d",ti1);
 			printf("\n M = %d, M' = %d",index,ti1);
 			for(b=0;b<n;b++) {
 				if(f[j-1][b]==ti1)
@@ -68,7 +68,7 @@ void propose(int n, listptr front, int getIndexVal, int m[n][n], int f[n][n]) {
 			if(v2>v1)
 				continue;
 			else { 	
-				listptr breakup=front;			//breakup
+				listptr breakup=front;			
 				printf("\nBreaking up : ");
 				w->womMi=index;
 				t->manMi=j;

@@ -29,7 +29,7 @@ void propose(int t, int s[][2], int m[t][t], int f[t][t], int n) {
 			break;
 		}
 		else {		
-		printf("\nIN PROPOSE  ELSE \n");	
+		//printf("\nIN PROPOSE  ELSE \n");	
 			k=s[j][1];    // k is which man  s[j][1] -- the woman w he is currently proposing to is engaged to.
 			for(b=0;b<t;b++) {	// in j's pref list(woman) is k better or n better? (m vs m')
 	 		//printf("\nin for of else %d = , %d = , %d =, %d, %d",f[j-1][b],k,n,v2,v1);
@@ -79,14 +79,14 @@ int main() {
 		s[i][1]=0;
 		s[i][0]=0;
 	}
-	printf("\nEnter MENS pref list, in order of 1 - %d (lower is better) : ",n);
+	printf("\nEnter MENS pref list, in order of 1 - %d : ",n);
 	for(i=0;i<n;i++) {
 		printf("\nEnter for man number %d : ",i+1);
 		for(j=0;j<n;j++) {
 			scanf("%d",&m[i][j]);
 		}
 	}
-	printf("\nEnter WOMENS pref list, in order of 1 - %d (lower is better) : ",n);
+	printf("\nEnter WOMENS pref list, in order of 1 - %d : ",n);
         for(i=0;i<n;i++) {
                 printf("\nEnter for woman number %d : ",i+1);
                 for(j=0;j<n;j++) {
