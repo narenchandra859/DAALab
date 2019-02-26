@@ -47,7 +47,7 @@ void propose(int t, int s[][2], int m[t][t], int f[t][t], int n) {
 				s[k][0]=0;    // k becomes unengaged
 				s[n][0]=j;
 				s[j][1]=n;
-				propose(t,s,m,f,k);
+				//propose(t,s,m,f,k); 			// FOR JUMPING
 				break;
 			}	
 		}
