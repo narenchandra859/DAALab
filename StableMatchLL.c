@@ -132,9 +132,9 @@ int main() {
 		propose(n,front,a,m,f);
 		printList(front);
 	}
-	printf("\n Final pairs : \n\tMan\tWoman");
+	printf("\n Final pairs : \n\tMan\tWoman\n");
 	for(i=0;i<n;i++) {
-		printf("\n\t%d\t%d",final->index,final->womMi);
+		printf("\t%d\t%d\n",final->index,final->manMi);
 		final=final->link;
 	}
 	return 0;
