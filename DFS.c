@@ -6,7 +6,40 @@ typedef struct list {
 	lptr link;
 }list;
 int visited[100]={0};
-void BFS(lptr *adjList, int n){}
+int queue[100]={0};
+int front=-1;
+int rear=-1;
+void addq(int s) {
+	queue[++rear]=s;
+}
+int deq() {
+	return queue[++front];
+}
+int queueEmpty() {
+	if(front==rear)
+		return 1;
+	return 0;
+}
+void BFS(lptr *adjList, int n, int s){
+	int m;
+	addq(s);
+	visited[s+1]=1;
+	lptr t;
+	printf("\nVisiting Node -> %d",s+1);
+	while(!queueEmpty()) {
+		m=deq();
+		t=adjList[m];
+		t=t->link;
+		while(t!=NULL) {
+			if(visited[t->nodeNo]==0) {
+				addq(t->nodeNo-1);
+				visited[t->nodeNo]=1;
+				printf("\nVisiting Node -> %d",t->nodeNo);
+			}
+			t=t->link;
+		}
+	}	
+}
 void DFS(lptr *adjList, int n, int s){
 	lptr t=adjList[s];
 	visited[adjList[s]->nodeNo]=1;
@@ -70,7 +103,7 @@ int main() {
 	printf("\nEnter 1 for BFS and 2 for DFS ");
 	scanf("%d",&u);	
 	if(u==1)
-		BFS(adjList, n);
+		BFS(adjList, n, 0);
 	else
 		DFS(adjList, n,0);
 	return 0;
