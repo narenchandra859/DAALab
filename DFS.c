@@ -5,7 +5,20 @@ typedef struct list {
 	int nodeNo;
 	lptr link;
 }list;
-void printUList(lptr x);
+int visited[100]={0};
+void BFS(lptr *adjList, int n){}
+void DFS(lptr *adjList, int n, int s){
+	lptr t=adjList[s];
+	visited[adjList[s]->nodeNo]=1;
+	printf("\n Visiting Node -> %d",adjList[s]->nodeNo);
+	while(t!=NULL) {
+		if(visited[t->nodeNo]==0) {
+			//visited[t->nodeNo]=1;
+			DFS(adjList,n,t->nodeNo-1);
+		}
+		t=t->link;
+	}
+}
 void addEdge(int a, int b, lptr *adjList) {
 	lptr t, t1, f=adjList[b-1], f1=adjList[a-1];
 	while(f->link!=NULL)
@@ -22,13 +35,6 @@ void addEdge(int a, int b, lptr *adjList) {
 	f1->link=t1;
 	//printUList(adjList[a-1]);
 	//printUList(adjList[b-1]);
-}
-void printUList(lptr a) {
-	printf("\n");
-	while(a!=NULL) {
-		printf("\t%d",a->nodeNo);
-		a=a->link;
-	}
 }
 void printList(lptr *adjList, int n) {
 	int i;
@@ -61,5 +67,11 @@ int main() {
 		addEdge(u,v,adjList);
 	}
 	printList(adjList, n);
+	printf("\nEnter 1 for BFS and 2 for DFS ");
+	scanf("%d",&u);	
+	if(u==1)
+		BFS(adjList, n);
+	else
+		DFS(adjList, n,0);
 	return 0;
 }		

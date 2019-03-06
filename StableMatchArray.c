@@ -17,8 +17,8 @@ int chooseman(int a[][2], int t) {
 		return i;
 	}
 }
-void propose(int t, int s[][2], int m[t][t], int f[t][t], int n) {
-	int i=1, j, k, b=0, v1, v2;
+void proposer(int t, int s[][2], int m[t][t], int f[t][t], int n) {
+	int ii=1, j, k, b=0, v1, v2;
 	//printf("\nIN PROPOSE \n");
 	for(i=1;i<=t;i++) {
 		j=m[n-1][i-1];        // j is mans pref list holder - the woman, n is the man currently being used for proposal
@@ -30,11 +30,11 @@ void propose(int t, int s[][2], int m[t][t], int f[t][t], int n) {
 		}
 		else {		
 		//printf("\nIN PROPOSE  ELSE \n");	
-			k=s[j][1];    // k is which man  s[j][1] -- the woman w he is currently proposing to is engaged to.
+			k=ss[j][1];    // k is which man  s[j][1] -- the woman w he is currently proposing to is engaged to.
 			for(b=0;b<t;b++) {	// in j's pref list(woman) is k better or n better? (m vs m')
 	 		//printf("\nin for of else %d = , %d = , %d =, %d, %d",f[j-1][b],k,n,v2,v1);
-				if(f[j-1][b]==n) 
-					v1=b;
+				if(ff[j-1][b]==n) 
+					vv1=b;
 				else if(f[j-1][b]==k)
 					v2=b;
 				else
