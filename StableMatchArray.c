@@ -17,8 +17,8 @@ int chooseman(int a[][2], int t) {
 		return i;
 	}
 }
-void proposer(int t, int s[][2], int m[t][t], int f[t][t], int n) {
-	int ii=1, j, k, b=0, v1, v2;
+void propose(int t, int s[][2], int m[t][t], int f[t][t], int n) {
+	int i=1, j, k, b=0, v1, v2;
 	//printf("\nIN PROPOSE \n");
 	for(i=1;i<=t;i++) {
 		j=m[n-1][i-1];        // j is mans pref list holder - the woman, n is the man currently being used for proposal
