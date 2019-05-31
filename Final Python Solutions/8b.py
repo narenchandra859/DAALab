@@ -1,3 +1,4 @@
+# code from rex
 n = 5
 graph={
     1:{ 2:10, 5:100},
